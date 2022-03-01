@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:projects/drawer.dart';
+import 'package:projects/name_card_widget.dart';
 
 class First extends StatefulWidget {
   const First({ Key? key }) : super(key: key);
@@ -21,37 +22,7 @@ class _FirstState extends State<First> {
       appBar: AppBar(),
       body: Center(
         child: SingleChildScrollView(
-          child: Card(
-            
-           child: Column(
-             children: [
-               
-              Image.asset('assets/download.jpg',
-              width: 200,
-              height: 200,
-              ),
-              
-               Text(myName),
-              const SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: EdgeInsets.all(2),
-                child: TextField(
-                    controller: _myController,
-
-                  decoration: InputDecoration(
-                    
-                    border: OutlineInputBorder(),
-                    hintText: 'some text',
-                    labelText: 'Name'
-                  ),
-                ),
-              )
-             ],
-           )
-           
-            ),
+          child: NameCardWidget(myName: myName, myController: _myController),
         ),
           
       ),
@@ -82,3 +53,4 @@ class _FirstState extends State<First> {
     );
   }
 }
+
