@@ -44,7 +44,13 @@ class _FirstState extends State<First> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          IconButton(onPressed: (){
+            Navigator.pop(context);
+          }, icon:Icon( Icons.exit_to_app))
+        ],
+      ),
      
       
         
